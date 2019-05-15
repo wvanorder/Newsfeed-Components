@@ -11,10 +11,12 @@ class Article {
     this.expandButton.textContent = 'click to expand';
     this.removeArticle.textContent = 'click to remove article';
     // Set a click handler on the expandButton reference, calling the expandArticle method.
-    this.expandButton.addEventListener('click', () => this.expandArticle());
+    this.domElement.addEventListener('click', () => this.expandArticle());
     this.removeArticle.addEventListener('click', () => this.articleDelete());
     this.domElement.addEventListener('mouseenter', () => this.articleScroll());
     this.domElement.addEventListener('mouseleave', () => this.articleScroll());
+    this.domElement.addEventListener('scroll', () => this.scrollButton());
+    this.domElement.addEventListener('mouseleave', () => this.scrollButtonPutBack());
   }
 
   expandArticle() {
@@ -31,6 +33,14 @@ this.expandButton.textContent = (this.expandButton.textContent === 'click to exp
   articleScroll() {
   this.domElement.classList.toggle('overflow');
   this.expandButton.classList.toggle('overflowexpandButton');
+  }
+
+  scrollButton() {
+    this.expandButton.classList.add('hidden');
+  }
+
+  scrollButtonPutBack() {
+    this.expandButton.classList.remove('hidden');
   }
 
 }

@@ -131,8 +131,7 @@
   overflow: auto;
 }
 .overflowexpandButton {
-  position: sticky;
-  margin-top: 25px;
+  position: absolute;
   bottom: 0;
   left: 50%;
   font-size: 12px;
@@ -140,6 +139,13 @@
   cursor: pointer;
   transform: translate(-50%);
   background-color: white;
+}
+.frisbee {
+  position: absolute;
+  top: 70px;
+  left: 25%;
+  margin-top: 10px;
+  width: 50%;
 }
 html,
 body {
